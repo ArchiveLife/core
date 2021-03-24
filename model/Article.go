@@ -7,7 +7,7 @@ type Article struct {
 	ID            ID
 	Title         *string
 	Author        *Author
-	CoAuthrors    []*Author
+	CoAuthors     []*Author
 	PublishDate   *time.Time
 	Content       *string
 	Tags          []string
