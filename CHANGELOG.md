@@ -1,4 +1,21 @@
 
+<a name="v0.0.4"></a>
+## [v0.0.4](https://github.com/ArchiveLife/model/compare/v0.0.3...v0.0.4) (2021-03-24)
+
+### Bug Fixes
+
+* media type
+* mis-spelling
+
+### Common
+
+* **release:** new version
+
+### Features
+
+* add fields for option
+
+
 <a name="v0.0.3"></a>
 ## [v0.0.3](https://github.com/ArchiveLife/model/compare/v0.0.2...v0.0.3) (2021-03-24)
 
