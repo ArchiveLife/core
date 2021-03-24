@@ -1,4 +1,13 @@
 
+<a name="v0.0.5"></a>
+## [v0.0.5](https://github.com/ArchiveLife/core/compare/v0.0.4...v0.0.5) (2021-03-24)
+
+### Common
+
+* rename
+* **release:** new version
+
+
 <a name="v0.0.4"></a>
 ## [v0.0.4](https://github.com/ArchiveLife/core/compare/v0.0.3...v0.0.4) (2021-03-24)
 
