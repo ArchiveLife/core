@@ -3,7 +3,7 @@ package lib
 type ReferenceType int
 
 const (
-	Author ReferenceType = 1
+	RefTypeAuthor ReferenceType = 1
 )
 
 type Reference struct {

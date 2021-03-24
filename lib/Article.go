@@ -3,11 +3,14 @@ package lib
 import "time"
 
 type Article struct {
-	Title      *string
-	Author     *string
-	CoAuthrors []string
-	Date       *time.Time
-	Content    *string
-	Tags       []string
-	References []*Reference
+	ID            string
+	Title         *string
+	Author        *Author
+	CoAuthrors    []*Author
+	PublishDate   *time.Time
+	Content       *string
+	Tags          []string
+	References    []*Reference
+	Type          string
+	ExtAttributes []*Attribtue
 }
