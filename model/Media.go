@@ -1,7 +1,7 @@
 package model
 
 type Media struct {
-	ID           string
+	ID           ID
 	MimeType     *string
 	ExternalLink *string
 }
