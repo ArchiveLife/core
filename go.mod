@@ -1,4 +1,4 @@
-module github.com/ArchiveLife/model
+module github.com/ArchiveLife/core
 
 go 1.14
 

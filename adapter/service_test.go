@@ -3,7 +3,7 @@ package adapter
 import (
 	"testing"
 
-	"github.com/ArchiveLife/model/model"
+	"github.com/ArchiveLife/core/model"
 	"github.com/stretchr/testify/assert"
 )
 
