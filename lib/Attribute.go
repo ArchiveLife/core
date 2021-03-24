@@ -1,4 +1,4 @@
-package lib
+package model
 
 type Attribtue struct {
 	Order int

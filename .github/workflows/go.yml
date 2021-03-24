@@ -34,17 +34,3 @@ jobs:
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
 
-      - name: set snapshot version
-        run: echo "VERSION=$(echo $GITHUB_SHA | cut -c 1-6)" >> $GITHUB_ENV
-
-      - name: build
-        working-directory: main
-        run: bash build.sh
-
-      - name: upload artifact
-        uses: actions/upload-artifact@v1.0.0
-        with:
-          # Artifact name
-          name: SNAPSHOTS-Build
-          # Directory containing files to upload
-          path: main/build

@@ -1,16 +1,17 @@
-package lib
+package model
 
 import "time"
 
 type Article struct {
-	ID            string
+	ID            ID
 	Title         *string
 	Author        *Author
 	CoAuthrors    []*Author
 	PublishDate   *time.Time
 	Content       *string
 	Tags          []string
-	References    []*Reference
 	Type          string
+	Medias        []*Media
+	References    []*Reference
 	ExtAttributes []*Attribtue
 }

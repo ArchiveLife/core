@@ -1,7 +1,7 @@
-package lib
+package model
 
 type Author struct {
-	ID            string
+	ID            ID
 	Age           *int
 	FullName      string
 	Address       *string
