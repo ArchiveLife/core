@@ -1,5 +1,5 @@
 package adapter
 
 type ArchiveServiceProvision interface {
-	ProvideServices() []*ArchiveService
+	ProvideServices() []ArchiveService
 }
