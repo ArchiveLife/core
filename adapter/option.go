@@ -1,16 +1,12 @@
 package adapter
 
-type OptionValueType string
-
-const (
-	String OptionValueType = "String"
-)
+import "reflect"
 
 type Option struct {
 	Order     int
 	Name      string
 	Optional  bool
-	ValueType OptionValueType
+	ValueType reflect.Kind
 }
 
 type OptionValue struct {
