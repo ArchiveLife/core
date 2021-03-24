@@ -2,6 +2,7 @@ package model
 
 import "time"
 
+// Article
 type Article struct {
 	ID            ID
 	Title         *string
@@ -13,5 +14,5 @@ type Article struct {
 	Type          string
 	Medias        []*Media
 	References    []*Reference
-	ExtAttributes []*Attribtue
+	ExtAttributes map[string]interface{}
 }

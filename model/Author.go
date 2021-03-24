@@ -6,5 +6,5 @@ type Author struct {
 	FullName      string
 	Address       *string
 	Mobile        *string
-	ExtAttributes []*Attribtue
+	ExtAttributes map[string]interface{}
 }
