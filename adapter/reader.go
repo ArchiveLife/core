@@ -4,8 +4,8 @@ import (
 	"github.com/ArchiveLife/core/model"
 )
 
-type ArticleReader interface {
+type ResourceReader interface {
 	// call after options inject
 	Init() error
-	Next() (*model.Article, bool)
+	Next() (model.Resource, bool)
 }

@@ -4,8 +4,8 @@ import (
 	"github.com/ArchiveLife/core/model"
 )
 
-// ArticleConsumer function, make client could consume large stream data
-type ArticleConsumer func(*model.Article)
+// ResourceConsumer function, make client could consume large stream data
+type ResourceConsumer func(model.Resource)
 
 // ArchiveService
 type ArchiveService interface {
@@ -16,11 +16,11 @@ type ArchiveService interface {
 	// get the options of service
 	GetOptions() []*Option
 	// run service with input options
-	Run(ArticleConsumer, ...*OptionValue) error
+	Run(ResourceConsumer, ...*OptionValue) error
 }
 
 // NewServiceWrapper instance
-func NewServiceWrapper(name, description string, reader ArticleReader, options ...*Option) *GenericServiceWrapper {
+func NewServiceWrapper(name, description string, reader ResourceReader, options ...*Option) *GenericServiceWrapper {
 	return &GenericServiceWrapper{
 		name,
 		description,
@@ -33,7 +33,7 @@ type GenericServiceWrapper struct {
 	name        string
 	description string
 	options     []*Option
-	reader      ArticleReader
+	reader      ResourceReader
 }
 
 func (s *GenericServiceWrapper) GetName() string {
@@ -49,7 +49,7 @@ func (s *GenericServiceWrapper) GetOptions() []*Option {
 }
 
 // Run with dynamic options (blocking)
-func (s *GenericServiceWrapper) Run(consumer ArticleConsumer, argOptValues ...*OptionValue) error {
+func (s *GenericServiceWrapper) Run(consumer ResourceConsumer, argOptValues ...*OptionValue) error {
 	FillInstanceByValues(s.reader, argOptValues...)
 
 	if err := s.reader.Init(); err != nil {

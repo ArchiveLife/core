@@ -1,18 +1,26 @@
 package model
 
-import "time"
+import (
+	"time"
+
+	"github.com/ArchiveLife/core/model/id"
+	"github.com/ArchiveLife/core/model/resource_type"
+)
 
 // Article
 type Article struct {
-	ID            ID
+	ID            id.ID
 	Title         *string
 	Author        *Author
 	CoAuthors     []*Author
-	PublishDate   *time.Time
+	DateTime      *time.Time
 	Content       *string
 	Tags          []string
 	Type          string
 	Medias        []*Media
-	References    []*Reference
 	ExtAttributes map[string]interface{}
+}
+
+func (*Article) GetType() resource_type.ResourceType {
+	return resource_type.Article
 }

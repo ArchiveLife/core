@@ -4,6 +4,7 @@ import (
 	"testing"
 
 	"github.com/ArchiveLife/core/model"
+	"github.com/ArchiveLife/core/model/resource_type"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -17,7 +18,7 @@ func (s *service01Reader) Init() error {
 	return nil
 }
 
-func (s *service01Reader) Next() (*model.Article, bool) {
+func (s *service01Reader) Next() (model.Resource, bool) {
 	s.cur++
 	if s.cur > s.Max {
 		return nil, false
@@ -31,7 +32,7 @@ func TestNewServiceWrapper(t *testing.T) {
 	type args struct {
 		name        string
 		description string
-		reader      ArticleReader
+		reader      ResourceReader
 		options     []*Option
 	}
 	tests := []struct {
@@ -55,7 +56,13 @@ func TestNewServiceWrapper(t *testing.T) {
 			got := NewServiceWrapper(tt.args.name, tt.args.description, tt.args.reader, tt.args.options...)
 			assert.NotNil(got)
 			count := 0
-			err := got.Run(func(a *model.Article) { count++ }, &OptionValue{Option: Option{Name: "Max"}, Value: 10})
+			err := got.Run(func(a model.Resource) {
+				count++
+				assert.Equal(resource_type.Article, a.GetType())
+				arti, ok := a.(*model.Article)
+				assert.True(ok)
+				assert.NotNil(arti)
+			}, &OptionValue{Option: Option{Name: "Max"}, Value: 10})
 			assert.Nil(err)
 			assert.Equal(10, count)
 		})
